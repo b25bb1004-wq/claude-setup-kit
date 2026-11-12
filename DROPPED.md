@@ -9,6 +9,8 @@ Every folder in the source `~/.claude/skills/` that is not in `skills/` is liste
 | commit-attribution-check | Merged into `verify-before-commit-push`; the original held a personal name and email. |
 | gdrive-ranged-download | Merged into `download-from-gdrive-onedrive-blocked`. |
 | soup-cli-gotchas | Specific to one personal fork of a CLI. |
+| profile-polish-with-evidence | Personal workflow (polishing one person's profiles); kept private. |
+| friend-ssh-link | Personal workflow (temporary SSH link to a collaborator's machine); kept private. |
 | (withheld 1) | Instructions for one private project tool; not reusable. Name withheld because it names the project. |
 | (withheld 2) | Project state for one competition track, not a skill. Name withheld. |
 | (withheld 3) | Controls one private multi-agent setup; its reusable Codex flag lessons moved into `codex-health-check`. Name withheld. |
@@ -48,14 +50,14 @@ These were installed from other authors. They are not copied here because of lic
 | graphify | PyPI package `graphifyy` | `uv tool install graphifyy`, then copy its bundled SKILL.md (do not run its installer, see `install-agent-tools-safely`). |
 | ui-ux-pro-max | Third-party UI/UX skill | Install from its upstream repo. |
 | reverse-engineer-anything | npm `rea-agents` | `npm pack rea-agents@<version>` and copy `package/skills/reverse-engineer-anything/`. |
-| scroll-craft | Third-party release | Upstream source not recorded; find the original before reinstalling. |
+| scroll-craft | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
 | llm-judge | Third-party (MIT) | Install from its upstream repo. |
-| job-seeker-helper | Job-seeker skill pack | Upstream source not recorded. |
-| cover-letter | Job-seeker skill pack | Upstream source not recorded. |
-| interview-coach | Job-seeker skill pack | Upstream source not recorded. |
-| job-application-tracker | Job-seeker skill pack | Upstream source not recorded. |
-| resume-optimizer | Job-seeker skill pack | Upstream source not recorded. |
-| socratic-tutor | Third-party | Upstream source not recorded. |
+| job-seeker-helper | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
+| cover-letter | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
+| interview-coach | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
+| job-application-tracker | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
+| resume-optimizer | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
+| socratic-tutor | Third-party, licence not stated | Upstream unknown, reinstall from source. Not relicensable, so never copied here. |
 
 ## Folders that are not skills
 

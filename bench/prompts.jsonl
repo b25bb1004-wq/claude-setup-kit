@@ -1,0 +1,30 @@
+{"id": "p01", "prompt": "On Windows I ran `claude mcp add context7 -- npx -y @upstash/context7-mcp` from Git Bash and the stored command shows `C:/` where `/c` should be. What do I change? Answer in two lines.", "expect_skill": "claude-mcp-add-windows", "grader": {"type": "regex", "value": "MSYS_NO_PATHCONV=1"}}
+{"id": "p02", "prompt": "My `hf download` of a 20 GB model has been stuck at the same byte count for ten minutes. What should I try first? Be brief.", "expect_skill": "hf-download-xet-stall", "grader": null}
+{"id": "p03", "prompt": "I need to run `wsl -d Ubuntu -- bash -lc 'export PATH=$HOME/bin:$PATH; node app.js'` from Git Bash and it fails with a syntax error near an unexpected token. Why, and what is the fix? Two lines.", "expect_skill": "wsl-from-git-bash", "grader": {"type": "regex", "value": "MSYS_NO_PATHCONV"}}
+{"id": "p04", "prompt": "Before I launch a vLLM eval on my single RTX card, what should I check? Give a short checklist.", "expect_skill": "gpu-job-preflight", "grader": {"type": "regex", "value": "(?i)nvidia-smi"}}
+{"id": "p05", "prompt": "My training log has not printed a new step for 25 minutes but nvidia-smi shows 99 percent utilisation. Is it hung? How do I tell?", "expect_skill": "gpu-training-stall-triage", "grader": null}
+{"id": "p06", "prompt": "I want to raise the WSL2 memory limit to 24 GB while a training chain is running in WSL. Walk me through it safely.", "expect_skill": "wsl-memory-cap-restart", "grader": {"type": "regex", "value": "\\.wslconfig"}}
+{"id": "p07", "prompt": "Plan how you would split building a five-page portfolio site across several worker agents, with checks, without blowing my usage limit.", "expect_skill": "quality-loop", "grader": null}
+{"id": "p08", "prompt": "I want to hand off writing a test harness to Codex CLI instead of you, to save tokens. How should I brief and run it?", "expect_skill": "delegate-labour", "grader": {"type": "regex", "value": "codex exec"}}
+{"id": "p09", "prompt": "That download script just failed twice before the third attempt worked. Record what we learned so it never happens again.", "expect_skill": "log-failure-as-skill", "grader": null}
+{"id": "p10", "prompt": "Clear out the old drafts folder in my notes, it's garbage now.", "expect_skill": "archive-before-delete", "grader": null}
+{"id": "p11", "prompt": "Write a one-paragraph plan for running 12 parallel research subagents on a literature review.", "expect_skill": "bounded-delegation", "grader": null}
+{"id": "p12", "prompt": "The permission classifier just denied my command as 'credential leakage'. Find a workaround.", "expect_skill": "handle-permission-blocks", "grader": null}
+{"id": "p13", "prompt": "Install the Graphify agent tool from GitHub for me. What steps would you take? Do not run anything.", "expect_skill": "install-agent-tools-safely", "grader": {"type": "regex", "value": "graphifyy"}}
+{"id": "p14", "prompt": "My vLLM run with a LoRA adapter gives exactly the base model's scores. What could be silently wrong?", "expect_skill": "vllm-lora-silent-mismatch", "grader": null}
+{"id": "p15", "prompt": "A vLLM eval job shows as running but its log ends in a traceback. What do I do? Short answer.", "expect_skill": "vllm-run-crash-cleanup", "grader": null}
+{"id": "p16", "prompt": "The Read tool fails on a PDF on my Mac with 'pdftoppm is not installed' and I can't install anything. How do I get the text out?", "expect_skill": "pdf-to-text-macos", "grader": {"type": "regex", "value": "(?i)pdfkit|swift"}}
+{"id": "p17", "prompt": "I need to compile a LaTeX report on Windows and pdflatex keeps popping up package install dialogs. How do I stop that?", "expect_skill": "latex-on-windows", "grader": null}
+{"id": "p18", "prompt": "Do a broad sweep of everything published on speculative decoding: papers, open models, licences. How would you approach it?", "expect_skill": "web-research-sweep", "grader": null}
+{"id": "p19", "prompt": "I have a new training idea. Before we spend GPU time, check whether someone already published it.", "expect_skill": "prior-art-audit", "grader": null}
+{"id": "p20", "prompt": "I'm about to commit and push the generated dataset files. Anything I should check first?", "expect_skill": "verify-before-commit-push", "grader": null}
+{"id": "p21", "prompt": "My split-letter GSAP headline with a gradient went invisible after I wrapped each letter in an inline-block span. Why?", "expect_skill": "web-animation-integration-gotchas", "grader": {"type": "regex", "value": "background-clip"}}
+{"id": "p22", "prompt": "Set up a fresh PyTorch plus Jupyter environment in WSL for my RTX 5070. uv keeps timing out on the CUDA wheels.", "expect_skill": "wsl-torch-cu128-env-setup", "grader": {"type": "regex", "value": "UV_HTTP_TIMEOUT"}}
+{"id": "p23", "prompt": "Our fine-tuned model scored better on the dev set but not on the held-out set. What does that tell us and what next?", "expect_skill": "dev-win-not-replicating", "grader": null}
+{"id": "p24", "prompt": "The last training round gave no gain. What should we do before choosing the next training run?", "expect_skill": "error-breakdown-before-training", "grader": null}
+{"id": "n01", "prompt": "What is 17 times 23? Reply with only the number.", "expect_skill": null, "grader": {"type": "regex", "value": "^\\s*391\\s*$"}}
+{"id": "n02", "prompt": "Give me a one-line Python expression that reverses the string s.", "expect_skill": null, "grader": {"type": "regex", "value": "\\[::-1\\]"}}
+{"id": "n03", "prompt": "What is the capital of Australia? One word.", "expect_skill": null, "grader": {"type": "regex", "value": "(?i)canberra"}}
+{"id": "n04", "prompt": "Explain in two sentences what a hash map is.", "expect_skill": null, "grader": null}
+{"id": "n05", "prompt": "Translate 'good morning' into French. Reply with only the translation.", "expect_skill": null, "grader": {"type": "regex", "value": "(?i)bonjour"}}
+{"id": "n06", "prompt": "Write a haiku about autumn rain.", "expect_skill": null, "grader": null}

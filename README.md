@@ -1,6 +1,6 @@
 # Claude Setup Kit
 
-A packaged, public-safe copy of one person's Claude Code setup: 70 skills, the plugin and MCP list, settings, a global instruction template, the auto-memory format and an Obsidian vault template that agents use as long-term memory. Personal names, paths, hosts, keys and private project details have been removed or replaced with placeholders (see `SANITIZE.md`).
+A packaged, public-safe copy of one person's Claude Code setup: 68 skills, the plugin and MCP list, settings, a global instruction template, the auto-memory format and an Obsidian vault template that agents use as long-term memory. Personal names, paths, hosts, keys and private project details have been removed or replaced with placeholders (see `SANITIZE.md`).
 
 ## The ideas behind it
 
@@ -36,7 +36,7 @@ A packaged, public-safe copy of one person's Claude Code setup: 70 skills, the p
 | Path | What it is |
 |---|---|
 | `README.md` | This file. |
-| `SKILLS.md` | Index of the 70 shipped skills, each marked as-is or generalised. |
+| `SKILLS.md` | Index of the 68 shipped skills, each marked as-is or generalised. |
 | `DROPPED.md` | Skills not shipped, with a reason each (third-party, project-specific, merged). |
 | `skills/` | One folder per skill, each with a `SKILL.md`. |
 | `plugins.md` | Marketplaces and plugins with exact install commands. |
@@ -55,9 +55,15 @@ A packaged, public-safe copy of one person's Claude Code setup: 70 skills, the p
 | `scripts/sanitize.py` | Scans the repo for personal data and secret-like strings; writes `SANITIZE.md`. |
 | `SANITIZE.md` | The last sanitizer report. |
 | `LOOP.md` | The build checklist and log used to make this kit. |
+| `LICENSE` | MIT licence. |
+| `bench/README.md` | How to run the static tests and the skill-trigger benchmark, and how to read the report. |
+| `bench/test_static.py` | Free static tests: validator, installers, sanitizer, references, required tools. |
+| `bench/prompts.jsonl` | 30 labelled prompts for the skill-trigger benchmark. |
+| `bench/run_bench.py` | Runs the prompts headless in isolated kit and vanilla configs. |
+| `bench/results/smoke/` | The one smoke run (2 prompts x 2 configs) that proves the runner works. |
 
 ## Notes
 
 - `templates/CLAUDE.md` is a template. Claude Code may load it as instructions when working inside `templates/`; that is harmless but worth knowing.
-- No licence has been chosen yet. Until one is added, all rights are reserved by default.
+- Licensed under MIT (see `LICENSE`). Third-party skills are not included; `DROPPED.md` says where to get them under their own licences.
 - Skills mention tools by name (Codex, Antigravity, hosted models). Check each tool's own terms before sending it any data.

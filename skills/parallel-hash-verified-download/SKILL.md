@@ -15,7 +15,7 @@ description: Download multi-GB model weights when a single Hugging Face connecti
 6. Send the auth header for gated repos from an env var, never a literal.
 
 **Operate**
-- The internet also drops: wrap it in a supervisor (`until grep -q DOWNLOAD_OK log; do python pdl.py ...; sleep 60; done`, started with `nohup`).
+- The internet also drops: wrap it in a supervisor (`until grep -q DOWNLOAD_OK log; do python pdl.py ...; sleep 60; done`, started with `nohup`, where `pdl.py` is the downloader you wrote from the design above and it prints `DOWNLOAD_OK` when every hash matches).
 - `du -sb` on a pre-sized file shows the full size; measure progress with `du -sk` (blocks).
 - Never use a third-party mirror without the SHA-256 check.
 - Kill a stalled `snapshot_download` by exact PID (`ps -eo pid,args | grep "[s]napshot_download"`), never `pkill -f` over ssh.

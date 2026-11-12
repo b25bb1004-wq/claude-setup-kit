@@ -1,6 +1,6 @@
 # Skills index
 
-70 skills: 16 shipped as-is after a light scrub, 54 generalised (personal paths, names and project details replaced with placeholders). Skills not shipped are listed in [DROPPED.md](DROPPED.md).
+68 skills: 16 shipped as-is after a light scrub, 52 generalised (personal paths, names and project details replaced with placeholders). Skills not shipped are listed in [DROPPED.md](DROPPED.md).
 
 Most of these began as a logged failure: something broke, the fix was found, and the lesson was written down so the next session does not repeat it (see `log-failure-as-skill`).
 
@@ -23,7 +23,6 @@ Most of these began as a logged failure: something broke, the fix was found, and
 | [failure-bank-loop](skills/failure-bank-loop/SKILL.md) | generalised | Keep every failed task of a model or agent pipeline in a labelled failure bank and learn from it instead of discarding it. |
 | [fla-kernels-qwen35-training](skills/fla-kernels-qwen35-training/SKILL.md) | as-is | Qwen3.5-style hybrid linear-attention models train slowly in transformers because they fall back to reference kernels. |
 | [forced-choice-transfer-eval](skills/forced-choice-transfer-eval/SKILL.md) | generalised | Measure whether a fine-tuned small model transfers to another task without format-following hiding the result. |
-| [friend-ssh-link](skills/friend-ssh-link/SKILL.md) | generalised | Set up, use and fully tear down a temporary SSH link to a collaborator's laptop so their Claude and yours can work on a shared task. |
 | [gpu-job-preflight](skills/gpu-job-preflight/SKILL.md) | generalised | Check the GPU and running jobs before launching any GPU job (vLLM eval, llama-server, llama-bench, training), and put timeouts on benchmarks that cross a slow link. |
 | [gpu-sigstop-pause-hazard](skills/gpu-sigstop-pause-hazard/SKILL.md) | as-is | Pausing a CUDA training job with SIGSTOP to let another job use the GPU, then resuming it hours later. |
 | [gpu-training-stall-triage](skills/gpu-training-stall-triage/SKILL.md) | generalised | Decide whether a long GPU training job is slow or hung when its log stops advancing. |
@@ -47,7 +46,6 @@ Most of these began as a logged failure: something broke, the fix was found, and
 | [pdf-to-text-macos](skills/pdf-to-text-macos/SKILL.md) | as-is | Extract text from a PDF on macOS when the Read tool fails with "pdftoppm is not installed" and pdftotext/pypdf are missing. |
 | [prior-art-audit](skills/prior-art-audit/SKILL.md) | generalised | Check whether a research or competition idea is already published before claiming novelty, with cheap verified citations. |
 | [product-red-team-panel](skills/product-red-team-panel/SKILL.md) | generalised | Red-team a PRODUCT (its demos, numbers, claims, code, PDF), not just the idea, with a fixed panel of adversarial personas, and turn every objection into the failure bank. |
-| [profile-polish-with-evidence](skills/profile-polish-with-evidence/SKILL.md) | generalised | Improve a GitHub profile, portfolio, LinkedIn and resume so a lab or startup would hire the person, without inventing or inflating anything. |
 | [quality-loop](skills/quality-loop/SKILL.md) | generalised | Orchestrator-led build loop. |
 | [random-weight-limit-probe](skills/random-weight-limit-probe/SKILL.md) | generalised | Find out whether a model size trains on your GPU, and at what sequence length, without downloading its weights. |
 | [reach-remote-machine](skills/reach-remote-machine/SKILL.md) | generalised | Check whether a remote GPU machine is reachable (over Tailscale or the LAN) before sending heavy jobs, training, or a local model call to it. |

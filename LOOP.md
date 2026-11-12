@@ -29,5 +29,25 @@ About 600k tokens for the whole build. Workers: none used (see log).
 - 2026-11-12: First sanitizer run: 7 hits (four private project names in `DROPPED.md` skill names, a Windows user path and a WSL user path in two skills, an em dash literal in the sanitizer source). All fixed: names withheld into a list outside the repo, paths rewritten with `%USERPROFILE%`, the em dash built with `chr(0x2014)`.
 - 2026-11-12: Checks run: 1 PASS (70 skills, 0 problems); 2 PASS (bash and PowerShell: dry run writes nothing, real run 71 copied and 2 skipped, rerun 0 copied); 4 PASS (20 of 20 paths); 5 PASS (0 not covered); 6 PASS. Item 3: see `SANITIZE.md` from the final run before commit.
 
+## Round 2 (2026-11-12, budget about 400k tokens)
+
+### Goal
+Licence, skill review, a benchmark suite, a commit identity with no personal data, a sanitizer pass over the tree and the whole history, then a private GitHub repo.
+
+### Checklist
+7. MIT `LICENSE` added; skills with no stated compatible licence are not in the repo; two personal-workflow skills removed and listed in `DROPPED.md`.
+8. Skill review: valid frontmatter, no references to files or skills not in the repo, no commands for tools missing from `requirements.md`. Check: `bench/test_static.py`.
+9. `bench/` holds static tests, a 30-prompt trigger benchmark runner and a README; one smoke run (2 prompts, both configs) in `bench/results/smoke`.
+10. Sanitizer: 0 hits on the tree and on every commit's identity, message and patch.
+11. Private GitHub repo created and `main` pushed, only if 10 passes.
+
+### Log
+- agy: looked again. No `agy` or `antigravity` on PATH; the IDE folder's `bin` has only the `antigravity-ide` editor launcher (no headless prompt mode); nothing in `~/.local/bin` or WSL. Review done by the orchestrator: script checks in `bench/test_static.py` plus a read of every skill (each was read in full while being generalised in round 1).
+- Review fixes: `requirements.md` gained the tools skills actually call (Hugging Face CLI, vLLM, CMake, Jupyter, poppler, Ghostscript, SQLite, graphify, rea-agents, standard Unix tools) and a corrected `agy` row; `parallel-hash-verified-download` now says `pdl.py` is the script you write from its design.
+- Third-party skills with unknown upstream (scroll-craft, socratic-tutor, the 5-skill job-seeker pack) were never copied; `DROPPED.md` now marks them "Upstream unknown, reinstall from source". `profile-polish-with-evidence` and `friend-ssh-link` removed (68 skills shipped).
+- Licence holder and commit identity: the GitHub login contains the same string as an institute student ID, which is on the scrub list. Putting the login in `LICENSE` or in commit metadata would put that ID in the repo and its history, so the holder is "The claude-setup-kit authors" and the commit identity stays neutral. The user decides whether to accept that or re-author.
+- Bench smoke run: first two attempts failed (Python resolved `bash` to the WSL launcher; a comment swallowed the prompt argument). Fixed with `shutil.which` and the prompt on stdin. Third and fourth attempts ran clean: kit has 85 skills available vs 17 for vanilla, so isolation works. In one attempt the kit fired the expected skill and in the other it did not, which shows answers vary between runs.
+- Checks: 7 to 9 PASS (7/7 static tests, coverage 0 uncovered, smoke run 0 errors). 10 and 11: see the final report.
+
 ## Status
 All six checklist items checked by the orchestrator, not by worker claims. Unfinished: nothing in scope. Open decisions for the user are in the final report (licence, unknown upstreams of some third-party skills, whether two personal-workflow skills should be public).
