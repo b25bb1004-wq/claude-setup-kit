@@ -1,0 +1,3 @@
+- [Plain-language explanations](plain-language-explanations.md): user wants reflective, plain teaching, not buzzword text
+- [Recipe app: CURRENT](recipe-app-project.md): ~/Workspace/recipe-app, branch offline-sync, do not push yet
+- [Docs hub page ids](docs-hub-reference.md): where the published course notes live, for future updates

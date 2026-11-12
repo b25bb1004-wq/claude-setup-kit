@@ -1,0 +1,10 @@
+# secrets and local files never belong in this repo
+.env
+*.env
+*.key
+*.pem
+scrub_terms*.txt
+withheld*.txt
+__pycache__/
+.DS_Store
+Thumbs.db

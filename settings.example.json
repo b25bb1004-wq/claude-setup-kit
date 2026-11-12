@@ -1,0 +1,81 @@
+{
+  "_comment": "Example ~/.claude/settings.json built from a real setup with paths generalised and secrets removed. Keys starting with _comment are notes; delete them. Merge by hand into your own settings; do not overwrite.",
+  "model": "opus",
+  "theme": "dark",
+  "cleanupPeriodDays": 99999,
+  "autoCompactWindow": 300000,
+  "includeCoAuthoredBy": false,
+  "_comment_includeCoAuthoredBy": "Set to taste. false keeps the Claude co-author line out of commits.",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
+  "modelSettings": {
+    "opus": { "effortLevel": "high" },
+    "sonnet": { "effortLevel": "high" }
+  },
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "PowerShell(nvidia-smi *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(git *)",
+      "PowerShell(gh *)",
+      "PowerShell(uv *)",
+      "Bash(python -)",
+      "Bash(PYTHONIOENCODING=utf-8 python -)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__claude_ai_Notion__notion-fetch"
+    ],
+    "_comment_allow": "On macOS or Linux use Bash(...) patterns instead of PowerShell(...). Keep allow rules narrow; avoid blanket rules for tools that can delete or publish."
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node ~/.claude/plugins/marketplaces/alexgreensh-token-optimizer/skills/token-optimizer/scripts/statusline.js",
+    "_comment": "Needs the token-optimizer plugin. Check the script path after install; it can change between versions."
+  },
+  "enabledPlugins": {
+    "agent-skills@addy-agent-skills": true,
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "clangd-lsp@claude-plugins-official": true,
+    "ecc@ecc": true,
+    "frontend-design@claude-plugins-official": true,
+    "miro@miro-ai": true,
+    "ponytail@ponytail": true,
+    "superpowers@superpowers-marketplace": true,
+    "token-optimizer@alexgreensh-token-optimizer": true,
+    "vercel@claude-plugins-official": true,
+    "watch@claude-video": true
+  },
+  "extraKnownMarketplaces": {
+    "addy-agent-skills": { "source": { "source": "github", "repo": "addyosmani/agent-skills" } },
+    "karpathy-skills": { "source": { "source": "github", "repo": "multica-ai/andrej-karpathy-skills" } },
+    "ecc": { "source": { "source": "git", "url": "https://github.com/affaan-m/ECC.git" } },
+    "miro-ai": { "source": { "source": "github", "repo": "miroapp/miro-ai" } },
+    "ponytail": { "source": { "source": "github", "repo": "DietrichGebert/ponytail" } },
+    "superpowers-marketplace": { "source": { "source": "github", "repo": "obra/superpowers-marketplace" } },
+    "alexgreensh-token-optimizer": { "source": { "source": "github", "repo": "alexgreensh/token-optimizer" } },
+    "claude-video": { "source": { "source": "github", "repo": "bradautomates/claude-video" } }
+  },
+  "pluginConfigs": {
+    "ecc": { "hooks_enabled": true, "hook_profile": "minimal" }
+  },
+  "_comment_hooks": "The real setup defines no hooks of its own; all hooks come from the ecc plugin. The block below is an ILLUSTRATIVE example only: a Stop hook that appends a timestamp to a log. Remove it or replace it with your own.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "date -u +%Y-%m-%dT%H:%M:%SZ >> ~/.claude/session-stops.log" }
+        ]
+      }
+    ]
+  },
+  "_comment_autoMode": "Auto mode accepts an environment description (autoMode.environment) telling the classifier which folders and machines are yours. Write your own in plain words; never list secret file contents there.",
+  "autoMode": {
+    "environment": [
+      "Single-user workstation. The user owns everything under ~ and approves their own prompts.",
+      "Project folders live under ~/Workspace. Secrets live in files outside the repos and are never printed."
+    ]
+  }
+}
